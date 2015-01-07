@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D71DD680-12EC-40A0-B81C-07D46657FCA4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Celero</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CELERO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CELERO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\celero\Archive.h" />
+    <ClInclude Include="include\celero\Benchmark.h" />
+    <ClInclude Include="include\celero\Callbacks.h" />
+    <ClInclude Include="include\celero\Celero.h" />
+    <ClInclude Include="include\celero\CommandLine.h" />
+    <ClInclude Include="include\celero\Console.h" />
+    <ClInclude Include="include\celero\Distribution.h" />
+    <ClInclude Include="include\celero\Executor.h" />
+    <ClInclude Include="include\celero\Experiment.h" />
+    <ClInclude Include="include\celero\Export.h" />
+    <ClInclude Include="include\celero\Factory.h" />
+    <ClInclude Include="include\celero\FileReader.h" />
+    <ClInclude Include="include\celero\GenericFactory.h" />
+    <ClInclude Include="include\celero\JUnit.h" />
+    <ClInclude Include="include\celero\Pimpl.h" />
+    <ClInclude Include="include\celero\PimplImpl.h" />
+    <ClInclude Include="include\celero\Print.h" />
+    <ClInclude Include="include\celero\Result.h" />
+    <ClInclude Include="include\celero\ResultTable.h" />
+    <ClInclude Include="include\celero\Statistics.h" />
+    <ClInclude Include="include\celero\TestFixture.h" />
+    <ClInclude Include="include\celero\TestVector.h" />
+    <ClInclude Include="include\celero\Timer.h" />
+    <ClInclude Include="include\celero\Utilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Archive.cpp" />
+    <ClCompile Include="src\Benchmark.cpp" />
+    <ClCompile Include="src\Callbacks.cpp" />
+    <ClCompile Include="src\Celero.cpp" />
+    <ClCompile Include="src\Console.cpp" />
+    <ClCompile Include="src\Distribution.cpp" />
+    <ClCompile Include="src\Executor.cpp" />
+    <ClCompile Include="src\Experiment.cpp" />
+    <ClCompile Include="src\JUnit.cpp" />
+    <ClCompile Include="src\Print.cpp" />
+    <ClCompile Include="src\Result.cpp" />
+    <ClCompile Include="src\ResultTable.cpp" />
+    <ClCompile Include="src\Statistics.cpp" />
+    <ClCompile Include="src\TestFixture.cpp" />
+    <ClCompile Include="src\TestVector.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\Utilities.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
